@@ -39,12 +39,16 @@ def apagar_carta(id):
 def login():
     usuario_fornecido  = request.args.get('user')
     senha_fornecida  = request.args.get('senha')
+    print(USUARIOS)
     if usuario_fornecido in USUARIOS:
         if USUARIOS[usuario_fornecido] == senha_fornecida:
+            print('loged')
             return jsonify({'usuario': usuario_fornecido, 'erro': 'OK'})
         else:
+            print('senha incorreta')
             return jsonify({'usuario': usuario_fornecido, 'erro': 'SENHA INCORRETA'})
     else:
+        print('usuario nao cadastrado')
         return jsonify({'usuario': usuario_fornecido, 'erro': 'USUARIO NAO ENCONTRADO'})
 
 
