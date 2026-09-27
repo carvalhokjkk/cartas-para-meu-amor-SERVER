@@ -3,8 +3,8 @@ import sqlite3
 DATABASE = "cartas.db"
 
 USUARIOS = {
-    'TEST_BOY': 'TEST_BOY123',
-    'TEST_GIRL': 'TEST_GIRL123'
+    'TESTBOY': 'TEST_BOY123',
+    'TESTGIRL': 'TEST_GIRL123'
 }
 
 
