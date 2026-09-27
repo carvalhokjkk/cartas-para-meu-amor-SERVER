@@ -5,8 +5,8 @@ DATABASE = "cartas.db"
 USUARIOS = {
     'TESTBOY': 'TEST',
     'TESTGIRL': 'TEST',
-    'a': 'a',
-    'b': 'b'
+    'A': 'A',
+    'B': 'B'
 }
 
 
