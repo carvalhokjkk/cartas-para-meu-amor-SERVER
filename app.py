@@ -39,8 +39,11 @@ if __name__ == "__main__":
 
 
 @app.get("/login")
-def login(usuario_fornecido, senha_fornecida):
-    if USUARIOS.keys.has(usuario_fornecido):
+def login():
+    usuario_fornecido  = request.args.get('user')
+    senha_fornecida  = request.args.get('senha')
+
+    if usuario_fornecido in USUARIOS:
         if USUARIOS['usuario_fornecido'] == senha_fornecida:
             return jsonify({'usuario': usuario_fornecido, 'erro': 'OK'})
         else:
