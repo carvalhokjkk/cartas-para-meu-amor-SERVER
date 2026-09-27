@@ -34,9 +34,6 @@ def apagar_carta(id):
     })
 
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
-
 
 @app.get("/login")
 def login():
@@ -49,3 +46,7 @@ def login():
             return jsonify({'usuario': usuario_fornecido, 'erro': 'SENHA INCORRETA'})
     else:
         return jsonify({'usuario': usuario_fornecido, 'erro': 'USUARIO NAO ENCONTRADO'})
+
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000)
