@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from database import criar_tabela, inserir_carta, listar_cartas, deletar_carta
+from database import criar_tabela, inserir_carta, listar_cartas, deletar_carta, USUARIOS
 
 app = Flask(__name__)
 
@@ -37,3 +37,13 @@ def apagar_carta(id):
 if __name__ == "__main__":
     app.run(debug=True)
 
+
+@app.get("/login")
+def login(usuario_fornecido, senha_fornecida):
+    if USUARIOS.keys.has(usuario_fornecido):
+        if USUARIOS['usuario_fornecido'] == senha_fornecida:
+            return jsonify({'usuario': usuario_fornecido, 'erro': 'OK'})
+        else:
+            return jsonify({'usuario': usuario_fornecido, 'erro': 'SENHA INCORRETA'})
+    else:
+        return jsonify({'usuario': usuario_fornecido, 'erro': 'USUARIO NAO ENCONTRADO'})
